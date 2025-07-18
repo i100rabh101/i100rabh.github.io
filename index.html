@@ -1,32 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sourabh Sharma | Cybersecurity Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Fira+Code&display=swap" rel="stylesheet">
+
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; }
-    header { background-color: #002147; color: #fff; padding: 2rem 1rem; text-align: center; }
-    header h1 { margin: 0; font-size: 2.5rem; }
-    header p { margin: 0.5rem 0; }
-    nav { margin-top: 1rem; }
-    nav a { color: #fff; margin: 0 0.5rem; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-    section { margin-bottom: 2rem; }
-    .section-title { border-bottom: 2px solid #002147; padding-bottom: 0.5rem; margin-bottom: 1rem; color: #002147; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .project, .experience-item, .education-item, .cert-item { background-color: #fff; padding: 1rem; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .project h4, .experience-item h4, .education-item h4, .cert-item h4 { margin: 0 0 0.5rem; color: #002147; }
-    footer { text-align: center; padding: 1rem; font-size: 0.9rem; color: #666; }
-    a.button { display: inline-block; background-color: #002147; color: #fff; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; margin-top: 1rem; }
-    a.button:hover { background-color: #01408a; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Fira Code', monospace;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #002147;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .typewriter {
+      overflow: hidden;
+      border-right: 0.15em solid orange;
+      white-space: nowrap;
+      animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      width: 0;
+      display: inline-block;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: orange; }
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: #00f0ff;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .section-title {
+      border-bottom: 2px solid #00f0ff;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      color: #00f0ff;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .project, .experience-item, .education-item, .cert-item {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 240, 255, 0.1);
+      border: 1px solid #00f0ff20;
+    }
+
+    h4 {
+      margin-bottom: 0.5rem;
+      color: #00f0ff;
+    }
+
+    a.button {
+      display: inline-block;
+      background-color: #00f0ff;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #00cce0;
+    }
+
+    a, a:visited {
+      color: #00f0ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Scroll Reveal */
+    .hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Sourabh Sharma</h1>
-    <p>Cybersecurity Analyst | GRC Analyst | VAPT Engineer</p>
+    <p class="typewriter">Cybersecurity Analyst | GRC Analyst | VAPT Engineer</p>
     <nav>
       <a href="#about">About</a> |
       <a href="#skills">Skills</a> |
@@ -37,12 +160,14 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
+
   <div class="container">
     <section id="about">
       <h2 class="section-title">About Me</h2>
       <p>Strong technical background in cybersecurity with hands-on experience in threat hunting, incident response, and log analysis. Proficient with SIEM platforms (Splunk, Wazuh), IDS/IPS systems, network monitoring tools, and vulnerability scanning. Solid foundation in penetration testing (VAPT), scripting (Python, Bash), networking, and risk assessment frameworks (ISO 27001, NIST). Enthusiastic about information security, ethical hacking, and securing systems and networks.</p>
-      <a href="Sourabh_Sharma_Cybersecurity_Analyst_Resume.pdf" class="button" download>Download Resume</a>
+      <a href="assets/Sourabh_Sharma_Cybersecurity_Analyst_Resume.pdf" class="button" target="_blank">View Resume</a>
     </section>
+
     <section id="skills">
       <h2 class="section-title">Skills</h2>
       <div class="grid">
@@ -71,6 +196,7 @@
         </div>
       </div>
     </section>
+
     <section id="projects">
       <h2 class="section-title">Projects</h2>
       <div class="project">
@@ -89,6 +215,7 @@
         <small>Jun 2025 – Jul 2025</small>
       </div>
     </section>
+
     <section id="experience">
       <h2 class="section-title">Experience</h2>
       <div class="experience-item">
@@ -100,8 +227,10 @@
         </ul>
       </div>
     </section>
+
     <section id="education">
-      <h2 class="section-title">Education & Training</n      <div class="education-item">
+      <h2 class="section-title">Education & Training</h2>
+      <div class="education-item">
         <h4>Bachelor of Mathematical Science, University of Delhi</h4>
         <small>Nov 2022 – Jun 2025</small>
       </div>
@@ -110,6 +239,7 @@
         <small>Jun 2024 – Dec 2024</small>
       </div>
     </section>
+
     <section id="certifications">
       <h2 class="section-title">Certifications</h2>
       <div class="cert-item">
@@ -125,14 +255,32 @@
         <small>Sep 2024 – Jun 2025</small>
       </div>
     </section>
+
     <section id="contact">
       <h2 class="section-title">Contact</h2>
       <p>Email: <a href="mailto:sourabh19090@gmail.com">sourabh19090@gmail.com</a></p>
       <p>LinkedIn: <a href="https://linkedin.com/in/sourabh-sharma-i100rabh" target="_blank">linkedin.com/in/sourabh-sharma-i100rabh</a></p>
+      <p>GitHub: <a href="https://github.com/i100rabh101" target="_blank">github.com/i100rabh101</a></p>
     </section>
   </div>
+
   <footer>
     &copy; 2025 Sourabh Sharma. All rights reserved.
   </footer>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+        }
+      });
+    });
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+      section.classList.add('hidden');
+    });
+  </script>
 </body>
 </html>
